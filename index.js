@@ -18,5 +18,13 @@ document.getElementById("pick").addEventListener("click", async() => {
         func: getColour
     });
 
-    document.getElementById('result').textContent = hex;
+    document.getElementById('hex').textContent = hex;
+
+    document.getElementById('swatch').style.backgroundColor = hex;
 });
+
+    document.getElementById("copy-button").addEventListener("click", () => {
+    navigator.clipboard.writeText(document.getElementById('hex').textContent);
+    document.getElementById("copy-button").style.backgroundColor = "green";
+    document.getElementById("copy-button").style.color = "white";
+})
