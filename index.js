@@ -10,6 +10,7 @@ async function getColour() {
 }
 
 
+// check for click on colour picker 
 document.getElementById("pick").addEventListener("click", async() => {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 
@@ -23,8 +24,24 @@ document.getElementById("pick").addEventListener("click", async() => {
     document.getElementById('swatch').style.backgroundColor = hex;
 });
 
-    document.getElementById("copy-button").addEventListener("click", () => {
+// checl for click on copy button
+document.getElementById("copy-button").addEventListener("click", () => {
+    const copyButton = document.getElementById("copy-button");
+    
+    const originalBg = copyButton.style.backgroundColor;
+    const originalColor = copyButton.style.color;
+    
     navigator.clipboard.writeText(document.getElementById('hex').textContent);
-    document.getElementById("copy-button").style.backgroundColor = "green";
-    document.getElementById("copy-button").style.color = "white";
+    copyButton.style.backgroundColor = "green";
+    copyButton.style.color = "white";
+
+    document.querySelector("#copy-button .copy-state").hidden = true;
+    document.querySelector("#copy-button .check-state").hidden = false;
+
+    setTimeout(() => {
+        copyButton.querySelector(".copy-state").hidden = false;
+        copyButton.querySelector(".check-state").hidden = true;
+        copyButton.style.backgroundColor = originalBg;
+        copyButton.style.color = originalColor;
+    }, 1200);
 })

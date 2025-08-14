@@ -4,67 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ColorPick</title>
+    <link rel="stylesheet" href="index.css" />
   </head>
-
-  <style>
-    body {
-      width: 280px;
-      font: 14px/1.4 system-ui, sans-serif;
-      margin: 14px;
-    }
-    button {
-      padding: 8px 12px;
-      border: 0;
-      border-radius: 8px;
-      cursor: pointer;
-      color: #111;
-    }
-
-    #pick {
-      width: 100%;
-      margin-bottom: 12px;
-      background: #111;
-      color: #fff;
-    }
-
-    #result-card {
-      height: 60px;
-      padding: 8px 12px;
-      border-radius: 8px;
-      background-color: #464d56;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    #swatch {
-      width: 50px;
-      height: 50px;
-      border-radius: 8px;
-      margin: auto;
-      background-color: white;
-      border: solid 1px gray;
-    }
-  </style>
   <body>
-    <button id="pick">Pick a Color</button>
+    <div style="text-align: center">
+      <button
+        id="pick"
+        style="
+          background-color: #202124;
+          width: 100px;
+          border: 1px solid #67adfe;
+        "
+      >
+        Pick a Color
+      </button>
+    </div>
 
     <div id="result-card">
       <div id="swatch"></div>
-      <div
-        id="hex"
-        style="align-content: center; text-align: center; color: white"
-      >
+
+      <div id="hex" style="text-align: center; margin: auto; color: white">
         #000000
       </div>
+
       <button
         id="copy-button"
         style="
           width: fit-content;
-          margin: 5px auto 5px auto;
+          margin: 10px auto;
           background-color: #67adfe;
+          border-radius: 8px;
         "
       >
-        Copy
+        <span class="copy-state">
+          <span class="copy-state"> 📋 Copy</span>
+        </span>
+
+        <span>
+          <span class="check-state" hidden> ✅ Copied</span>
+        </span>
       </button>
     </div>
 
