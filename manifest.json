@@ -3,5 +3,8 @@
   "name": "ColorPick",
   "version": "1.0.0",
   "action": { "default_popup": "index.html" },
-  "permissions": ["activeTab", "scripting"]
+  "permissions": ["activeTab", "scripting"],
+  "icons": { 
+    "500": "ColorPick.png"
+  }
 }
