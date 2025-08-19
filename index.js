@@ -29,7 +29,7 @@ document.getElementById("pick").addEventListener("click", async() => {
     }
 
     // limit at 5 hex 
-    if (MRU.length > 5) {    
+    if (MRU.length > 4) {    
         MRU.pop();
         MRU.unshift(hex);
     } else { 
