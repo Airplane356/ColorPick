@@ -20,30 +20,36 @@
       </button>
     </div>
 
-    <div id="result-card">
-      <div id="swatch"></div>
+    <div
+      id="result-card"
+      style="background-color: #464d56; border-radius: 12px"
+    >
+      <div id="placeholder">
+        <div id="swatch"></div>
 
-      <div id="hex" style="text-align: center; margin: auto; color: white">
-        #000000
+        <div id="hex" style="text-align: center; margin: auto; color: white">
+          #000000
+        </div>
+
+        <button
+          id="copy"
+          style="
+            width: fit-content;
+            margin: 10px auto;
+            background-color: #67adfe;
+            border-radius: 8px;
+          "
+        >
+          <span class="copy-state">
+            <span class="copy-state"> 📋 Copy</span>
+          </span>
+
+          <span>
+            <span class="check-state" hidden> ✅ Copied</span>
+          </span>
+        </button>
       </div>
-
-      <button
-        id="copy-button"
-        style="
-          width: fit-content;
-          margin: 10px auto;
-          background-color: #67adfe;
-          border-radius: 8px;
-        "
-      >
-        <span class="copy-state">
-          <span class="copy-state"> 📋 Copy</span>
-        </span>
-
-        <span>
-          <span class="check-state" hidden> ✅ Copied</span>
-        </span>
-      </button>
+      <div id="recent-list"></div>
     </div>
 
     <script src="index.js"></script>
